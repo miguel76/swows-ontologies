@@ -1,0 +1,172 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<rdf:RDF xmlns="http://www.swows.org/2012/06/tuio#"
+     xml:base="http://www.swows.org/2012/06/tuio"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <owl:Ontology rdf:about="http://www.swows.org/2012/06/tuio"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.swows.org/2012/06/tuio#position -->
+
+    <owl:ObjectProperty rdf:about="http://www.swows.org/2012/06/tuio#position">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://www.swows.org/2012/06/tuio#Point2D"/>
+        <rdfs:domain rdf:resource="http://www.swows.org/2012/06/tuio#Tracked"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.swows.org/2012/06/tuio#source -->
+
+    <owl:ObjectProperty rdf:about="http://www.swows.org/2012/06/tuio#source">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://www.swows.org/2012/06/tuio#Source"/>
+        <rdfs:domain rdf:resource="http://www.swows.org/2012/06/tuio#Tracked"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.swows.org/2012/06/tuio#angle -->
+
+    <owl:DatatypeProperty rdf:about="http://www.swows.org/2012/06/tuio#angle">
+        <rdfs:domain rdf:resource="http://www.swows.org/2012/06/tuio#Object"/>
+        <rdfs:range rdf:resource="&xsd;decimal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.swows.org/2012/06/tuio#creationTime -->
+
+    <owl:DatatypeProperty rdf:about="http://www.swows.org/2012/06/tuio#creationTime">
+        <rdfs:domain rdf:resource="http://www.swows.org/2012/06/tuio#Tracked"/>
+        <rdfs:range rdf:resource="&xsd;decimal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.swows.org/2012/06/tuio#markerId -->
+
+    <owl:DatatypeProperty rdf:about="http://www.swows.org/2012/06/tuio#markerId">
+        <rdfs:domain rdf:resource="http://www.swows.org/2012/06/tuio#Object"/>
+        <rdfs:range rdf:resource="&xsd;integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.swows.org/2012/06/tuio#updateTime -->
+
+    <owl:DatatypeProperty rdf:about="http://www.swows.org/2012/06/tuio#updateTime">
+        <rdfs:range rdf:resource="&xsd;decimal"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.swows.org/2012/06/tuio#Source"/>
+                    <rdf:Description rdf:about="http://www.swows.org/2012/06/tuio#Tracked"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.swows.org/2012/06/tuio#x -->
+
+    <owl:DatatypeProperty rdf:about="http://www.swows.org/2012/06/tuio#x">
+        <rdfs:domain rdf:resource="http://www.swows.org/2012/06/tuio#Point2D"/>
+        <rdfs:range rdf:resource="&xsd;decimal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.swows.org/2012/06/tuio#y -->
+
+    <owl:DatatypeProperty rdf:about="http://www.swows.org/2012/06/tuio#y">
+        <rdfs:domain rdf:resource="http://www.swows.org/2012/06/tuio#Point2D"/>
+        <rdfs:range rdf:resource="&xsd;decimal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.swows.org/2012/06/tuio#Cursor -->
+
+    <owl:Class rdf:about="http://www.swows.org/2012/06/tuio#Cursor">
+        <rdfs:subClassOf rdf:resource="http://www.swows.org/2012/06/tuio#Tracked"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.swows.org/2012/06/tuio#Object -->
+
+    <owl:Class rdf:about="http://www.swows.org/2012/06/tuio#Object">
+        <rdfs:subClassOf rdf:resource="http://www.swows.org/2012/06/tuio#Tracked"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.swows.org/2012/06/tuio#Point2D -->
+
+    <owl:Class rdf:about="http://www.swows.org/2012/06/tuio#Point2D"/>
+    
+
+
+    <!-- http://www.swows.org/2012/06/tuio#Source -->
+
+    <owl:Class rdf:about="http://www.swows.org/2012/06/tuio#Source"/>
+    
+
+
+    <!-- http://www.swows.org/2012/06/tuio#Tracked -->
+
+    <owl:Class rdf:about="http://www.swows.org/2012/06/tuio#Tracked"/>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.5.0) http://owlapi.sourceforge.net -->
+

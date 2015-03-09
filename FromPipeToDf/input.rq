@@ -1,0 +1,15 @@
+CONSTRUCT {
+  ?input
+    a df:SelectGraph;
+    df:id ?graphName;
+    df:input swi:InputDataset.
+}
+WHERE {
+  </swows-test/FAO/fao> mecomp:has-component ?input.
+  ?input a mecomp:Source.
+  OPTIONAL {
+    ?input dcterms:identifier ?id.
+    BIND(URI(CONCAT(STR(</swows-test/FAO/fao/>),?id)) AS ?graphName).
+  }
+}
+

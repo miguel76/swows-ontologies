@@ -1,0 +1,35 @@
+CONSTRUCT {
+  ?transform
+    a df:TransformGraph;
+    df:configTxt ?query;
+    df:input ?inputDataset.
+  ?inputDataset
+    a df:InlineDataset;
+    df:input ?defaultInput;
+    df:namedInput ?namedInput.
+  ?namedInput
+    a df:NamedInput;
+#    df:name ?output;
+    df:input ?input.
+}
+WHERE {
+  </swows-test/FAO/fao> mecomp:has-component ?transform.
+  BIND(URI(CONCAT(STR(</swows-test/FAO/fao/inputDataset>),MD5(STR(?transform)))) AS ?inputDataset).
+  ?transform
+    a swcomp:TransformProcessor;
+    mecomp:processor-script ?query.
+  OPTIONAL {
+    ?endpoint1
+      a mecomp:Input;
+      mecomp:for-component ?query.
+    ?link
+      a mecomp:Link;
+      mecomp:to-input ?endpoint1;
+      mecomp:from-output ?endpoint2.
+    ?endpoint2
+      a mecomp:Output;
+      mecomp:for-component ?input.
+    BIND(URI(CONCAT(STR(</swows-test/FAO/fao/namedInput>),MD5(STR(?input)))) AS ?namedInput).
+  }
+}
+

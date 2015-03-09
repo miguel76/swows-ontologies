@@ -1,0 +1,173 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY dc "http://purl.org/dc/elements/1.1/" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<rdf:RDF xmlns="http://www.swows.org/2013/07/xml-dom#"
+     xml:base="http://www.swows.org/2013/07/xml-dom"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <owl:Ontology rdf:about="http://www.swows.org/2013/07/xml-dom">
+       <rdfs:comment rdf:datatype="&xsd;string">Ontology representing XML DOM structures</rdfs:comment>
+        <dc:creator rdf:datatype="&xsd;string">miguel.ceriani@gmail.com</dc:creator>
+    </owl:Ontology>
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <owl:ObjectProperty rdf:about="#firstChild">
+        <rdfs:domain rdf:resource="#Element"/>
+        <rdfs:range rdf:resource="#Node"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+    <owl:ObjectProperty rdf:about="#hasChild">
+        <rdfs:domain rdf:resource="#Element"/>
+        <rdfs:range rdf:resource="#Node"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+    <owl:ObjectProperty rdf:about="#lastChild">
+        <rdfs:domain rdf:resource="#Element"/>
+        <rdfs:range rdf:resource="#Node"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+    <owl:ObjectProperty rdf:about="#nextSibling">
+        <rdfs:range rdf:resource="#Node"/>
+        <rdfs:domain rdf:resource="#Node"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+    <owl:ObjectProperty rdf:about="#ownerDocument">
+        <rdfs:range rdf:resource="#Document"/>
+        <rdfs:domain rdf:resource="#Node"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+    <owl:ObjectProperty rdf:about="#parentNode">
+        <rdfs:range rdf:resource="#Element"/>
+        <rdfs:domain rdf:resource="#Node"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+    <owl:ObjectProperty rdf:about="#previousSibling">
+        <rdfs:domain rdf:resource="#Node"/>
+        <rdfs:range rdf:resource="#Node"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <owl:DatatypeProperty rdf:about="#namespace">
+        <rdfs:domain rdf:resource="#NodeClass"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topDataProperty"/>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#nodeName">
+        <rdfs:domain rdf:resource="#NodeClass"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+    <owl:DatatypeProperty rdf:about="#nodeValue">
+        <rdfs:subPropertyOf rdf:resource="&owl;topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <NodeClass rdf:about="#Attr">
+        <rdfs:subClassOf rdf:resource="#Node"/>
+    	<rdf:type rdf:resource="&owl;DatatypeProperty"/>
+    </NodeClass>
+    
+    <NodeClass rdf:about="#CDATASection">
+        <rdfs:subClassOf rdf:resource="#Node"/>
+	<nodeName>#cdata-section</nodeName>
+    </NodeClass>
+    
+    <NodeClass rdf:about="#Comment">
+        <rdfs:subClassOf rdf:resource="#Node"/>
+	<nodeName>#comment</nodeName>
+    </NodeClass>
+    
+    <NodeClass rdf:about="#Document">
+        <rdfs:subClassOf rdf:resource="#Node"/>
+	<nodeName>#document</nodeName>
+    </NodeClass>
+    
+    <NodeClass rdf:about="#DocumentFragment">
+        <rdfs:subClassOf rdf:resource="#Node"/>
+	<nodeName>#document-fragment</nodeName>
+    </NodeClass>
+    
+    <NodeClass rdf:about="#DocumentType">
+        <rdfs:subClassOf rdf:resource="#Node"/>
+    </NodeClass>
+    
+    <NodeClass rdf:about="#Element">
+        <rdfs:subClassOf rdf:resource="#Node"/>
+    </NodeClass>
+    
+    <NodeClass rdf:about="#Entity">
+        <rdfs:subClassOf rdf:resource="#Node"/>
+    </NodeClass>
+    
+    <NodeClass rdf:about="#EntityReference">
+        <rdfs:subClassOf rdf:resource="#Node"/>
+    </NodeClass>
+    
+    <NodeClass rdf:about="#Node">
+        <rdfs:subClassOf rdf:resource="&owl;Thing"/>
+    </NodeClass>
+    
+    <owl:Class rdf:about="#NodeClass">
+        <rdfs:subClassOf rdf:resource="&owl;Class"/>
+    </owl:Class>
+    
+    <NodeClass rdf:about="#Notation">
+        <rdfs:subClassOf rdf:resource="#Node"/>
+    </NodeClass>
+    
+    <NodeClass rdf:about="#ProcessingInstruction">
+        <rdfs:subClassOf rdf:resource="#Node"/>
+    </NodeClass>
+    
+    <NodeClass rdf:about="#Text">
+        <rdfs:subClassOf rdf:resource="#Node"/>
+	<nodeName>#text</nodeName>
+    </NodeClass>
+    
+
+</rdf:RDF>
+

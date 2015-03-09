@@ -1,0 +1,150 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY dc "http://purl.org/dc/elements/1.1/" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY xml "http://www.swows.org/2013/07/xml-dom#" >
+
+]>
+
+
+<rdf:RDF xmlns="http://www.swows.org/2013/07/xml-dom-events#"
+     xml:base="http://www.swows.org/2013/07/xml-dom-events"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:xml="http://www.swows.org/2013/07/xml-dom#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <owl:Ontology rdf:about="http://www.swows.org/2013/07/xml-dom-events">
+       <rdfs:comment rdf:datatype="&xsd;string">Ontology representing XML DOM Event structures</rdfs:comment>
+        <dc:creator rdf:datatype="&xsd;string">miguel.ceriani@gmail.com</dc:creator>
+        <owl:imports rdf:resource="http://www.swows.org/2013/07/xml-dom"/>
+   </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <owl:ObjectProperty rdf:about="#target">
+        <rdfs:domain rdf:resource="#Event"/>
+        <rdfs:range rdf:resource="&xml;Node"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+    <owl:ObjectProperty rdf:about="#currentTarget">
+        <rdfs:domain rdf:resource="#Event"/>
+        <rdfs:range rdf:resource="&xml;Node"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+    <owl:ObjectProperty rdf:about="#relatedTarget">
+        <rdfs:domain rdf:resource="#Event"/>
+        <rdfs:range rdf:resource="&xml;Node"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+    
+    <owl:DatatypeProperty rdf:about="#timeStamp">
+        <rdfs:domain rdf:resource="#Event"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+    <owl:DatatypeProperty rdf:about="#type">
+        <rdfs:domain rdf:resource="#Event"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+    <owl:DatatypeProperty rdf:about="#screenX">
+        <rdfs:domain rdf:resource="#MouseEvent"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+    <owl:DatatypeProperty rdf:about="#screenY">
+        <rdfs:domain rdf:resource="#MouseEvent"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+    <owl:DatatypeProperty rdf:about="#clientX">
+        <rdfs:domain rdf:resource="#MouseEvent"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+    <owl:DatatypeProperty rdf:about="#clientY">
+        <rdfs:domain rdf:resource="#MouseEvent"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+    <owl:DatatypeProperty rdf:about="#ctrlKey">
+        <rdfs:domain rdf:resource="#MouseEvent"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+    <owl:DatatypeProperty rdf:about="#shiftKey">
+        <rdfs:domain rdf:resource="#MouseEvent"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+    <owl:DatatypeProperty rdf:about="#altKey">
+        <rdfs:domain rdf:resource="#MouseEvent"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+    <owl:DatatypeProperty rdf:about="#metaKey">
+        <rdfs:domain rdf:resource="#MouseEvent"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+    <owl:DatatypeProperty rdf:about="#button">
+        <rdfs:domain rdf:resource="#MouseEvent"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <owl:Class rdf:about="#Event">
+        <rdfs:subClassOf rdf:resource="&owl;Class"/>
+    </owl:Class>
+    
+    <owl:Class rdf:about="#UIEvent">
+        <rdfs:subClassOf rdf:resource="#Event"/>
+    </owl:Class>
+    
+    <owl:Class rdf:about="#MouseEvent">
+        <rdfs:subClassOf rdf:resource="#UIEvent"/>
+    </owl:Class>
+    
+
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net -->
+

@@ -1,0 +1,7 @@
+<IfModule mod_rewrite.c>
+RewriteEngine on
+
+RewriteRule ^/2013/07/xml-dom$ /2013/07/xml-dom.owl [L]
+RewriteRule ^/2013/07/xml-dom-events$ /2013/07/xml-dom-events.owl [L]
+
+</IfModule>

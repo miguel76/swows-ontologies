@@ -1,0 +1,32 @@
+CONSTRUCT {
+  swi:OutputDataset
+    a df:InlineDataset;
+    df:input ?defaultInput;
+    df:namedInput ?namedInput.
+  ?namedInput
+    a df:NamedInput;
+    df:name ?output;
+    df:input ?input.
+}
+WHERE {
+  </swows-test/FAO/fao> mecomp:has-component ?output.
+  ?output a mecomp:Sink.
+  {
+    ?output dcterms:identifier ?name.
+   BIND(?output AS ?namedInput).
+  } UNION {
+    FILTER NOT EXISTS {?output dcterms:identifier ?name.}.
+    BIND(?output AS ?defaultInput).
+  }
+  ?endpoint1
+    a mecomp:Input;
+    mecomp:for-component ?output.
+  ?link
+    a mecomp:Link;
+    mecomp:to-input ?endpoint1;
+    mecomp:from-output ?endpoint2.
+  ?endpoint2
+    a mecomp:Output;
+    mecomp:for-component ?input.
+}
+

@@ -1,0 +1,440 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY dc "http://purl.org/dc/elements/1.1/" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<rdf:RDF xmlns="http://www.swows.org/2013/07/xml-dom#"
+     xml:base="http://www.swows.org/2013/07/xml-dom"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <owl:Ontology rdf:about="http://www.swows.org/2013/07/xml-dom">
+        <rdfs:comment rdf:datatype="&xsd;string">Ontology representing XML DOM structures</rdfs:comment>
+        <dc:creator rdf:datatype="&xsd;string">miguel.ceriani@gmail.com</dc:creator>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.swows.org/2013/07/xml-dom#attribute -->
+
+    <owl:ObjectProperty rdf:about="http://www.swows.org/2013/07/xml-dom#attribute">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://www.swows.org/2013/07/xml-dom#Attr"/>
+        <rdfs:domain rdf:resource="http://www.swows.org/2013/07/xml-dom#Element"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.swows.org/2013/07/xml-dom#childrenOrderType -->
+
+    <owl:ObjectProperty rdf:about="http://www.swows.org/2013/07/xml-dom#childrenOrderType">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.swows.org/2013/07/xml-dom#Element"/>
+        <rdfs:range rdf:resource="http://www.swows.org/2013/07/xml-dom#OrderType"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.swows.org/2013/07/xml-dom#childrenOrderedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.swows.org/2013/07/xml-dom#childrenOrderedBy">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.swows.org/2013/07/xml-dom#Element"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.swows.org/2013/07/xml-dom#hasChild -->
+
+    <owl:ObjectProperty rdf:about="http://www.swows.org/2013/07/xml-dom#hasChild">
+        <rdfs:domain rdf:resource="http://www.swows.org/2013/07/xml-dom#Element"/>
+        <rdfs:range rdf:resource="http://www.swows.org/2013/07/xml-dom#Node"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.swows.org/2013/07/xml-dom#orderKey -->
+
+    <owl:ObjectProperty rdf:about="http://www.swows.org/2013/07/xml-dom#orderKey">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.swows.org/2013/07/xml-dom#Node"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.swows.org/2013/07/xml-dom#ownerDocument -->
+
+    <owl:ObjectProperty rdf:about="http://www.swows.org/2013/07/xml-dom#ownerDocument">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://www.swows.org/2013/07/xml-dom#Document"/>
+        <rdfs:domain rdf:resource="http://www.swows.org/2013/07/xml-dom#Node"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.swows.org/2013/07/xml-dom#nodeName -->
+
+    <owl:DatatypeProperty rdf:about="http://www.swows.org/2013/07/xml-dom#nodeName">
+        <rdfs:domain rdf:resource="http://www.swows.org/2013/07/xml-dom#Node"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.swows.org/2013/07/xml-dom#nodeValue -->
+
+    <owl:DatatypeProperty rdf:about="http://www.swows.org/2013/07/xml-dom#nodeValue">
+        <rdfs:domain rdf:resource="http://www.swows.org/2013/07/xml-dom#Node"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.swows.org/2013/07/xml-dom#Attr -->
+
+    <owl:Class rdf:about="http://www.swows.org/2013/07/xml-dom#Attr">
+        <rdfs:subClassOf rdf:resource="http://www.swows.org/2013/07/xml-dom#Node"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.swows.org/2013/07/xml-dom#CDATASection -->
+
+    <owl:Class rdf:about="http://www.swows.org/2013/07/xml-dom#CDATASection">
+        <rdfs:subClassOf rdf:resource="http://www.swows.org/2013/07/xml-dom#Node"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.swows.org/2013/07/xml-dom#nodeValue"/>
+                <owl:hasValue>#cdata-section</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.swows.org/2013/07/xml-dom#Comment -->
+
+    <owl:Class rdf:about="http://www.swows.org/2013/07/xml-dom#Comment">
+        <rdfs:subClassOf rdf:resource="http://www.swows.org/2013/07/xml-dom#Node"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.swows.org/2013/07/xml-dom#nodeName"/>
+                <owl:hasValue>#comment</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.swows.org/2013/07/xml-dom#Document -->
+
+    <owl:Class rdf:about="http://www.swows.org/2013/07/xml-dom#Document">
+        <rdfs:subClassOf rdf:resource="http://www.swows.org/2013/07/xml-dom#Node"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.swows.org/2013/07/xml-dom#nodeName"/>
+                <owl:hasValue>#document</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.swows.org/2013/07/xml-dom#DocumentFragment -->
+
+    <owl:Class rdf:about="http://www.swows.org/2013/07/xml-dom#DocumentFragment">
+        <rdfs:subClassOf rdf:resource="http://www.swows.org/2013/07/xml-dom#Node"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.swows.org/2013/07/xml-dom#nodeName"/>
+                <owl:hasValue>#document-fragment</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.swows.org/2013/07/xml-dom#DocumentType -->
+
+    <owl:Class rdf:about="http://www.swows.org/2013/07/xml-dom#DocumentType">
+        <rdfs:subClassOf rdf:resource="http://www.swows.org/2013/07/xml-dom#Node"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.swows.org/2013/07/xml-dom#Element -->
+
+    <owl:Class rdf:about="http://www.swows.org/2013/07/xml-dom#Element">
+        <rdfs:subClassOf rdf:resource="http://www.swows.org/2013/07/xml-dom#Node"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.swows.org/2013/07/xml-dom#Entity -->
+
+    <owl:Class rdf:about="http://www.swows.org/2013/07/xml-dom#Entity">
+        <rdfs:subClassOf rdf:resource="http://www.swows.org/2013/07/xml-dom#Node"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.swows.org/2013/07/xml-dom#EntityReference -->
+
+    <owl:Class rdf:about="http://www.swows.org/2013/07/xml-dom#EntityReference">
+        <rdfs:subClassOf rdf:resource="http://www.swows.org/2013/07/xml-dom#Node"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.swows.org/2013/07/xml-dom#Node -->
+
+    <owl:Class rdf:about="http://www.swows.org/2013/07/xml-dom#Node">
+        <rdfs:subClassOf rdf:resource="&owl;Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.swows.org/2013/07/xml-dom#Notation -->
+
+    <owl:Class rdf:about="http://www.swows.org/2013/07/xml-dom#Notation">
+        <rdfs:subClassOf rdf:resource="http://www.swows.org/2013/07/xml-dom#Node"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.swows.org/2013/07/xml-dom#OrderType -->
+
+    <owl:Class rdf:about="http://www.swows.org/2013/07/xml-dom#OrderType">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.swows.org/2013/07/xml-dom#Ascending"/>
+                    <rdf:Description rdf:about="http://www.swows.org/2013/07/xml-dom#Descending"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.swows.org/2013/07/xml-dom#ProcessingInstruction -->
+
+    <owl:Class rdf:about="http://www.swows.org/2013/07/xml-dom#ProcessingInstruction">
+        <rdfs:subClassOf rdf:resource="http://www.swows.org/2013/07/xml-dom#Node"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.swows.org/2013/07/xml-dom#Text -->
+
+    <owl:Class rdf:about="http://www.swows.org/2013/07/xml-dom#Text">
+        <rdfs:subClassOf rdf:resource="http://www.swows.org/2013/07/xml-dom#Node"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.swows.org/2013/07/xml-dom#nodeName"/>
+                <owl:hasValue>#text</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.swows.org/2013/07/xml-dom#Ascending -->
+
+    <owl:NamedIndividual rdf:about="http://www.swows.org/2013/07/xml-dom#Ascending">
+        <rdf:type rdf:resource="http://www.swows.org/2013/07/xml-dom#OrderType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.swows.org/2013/07/xml-dom#Attr -->
+
+    <owl:NamedIndividual rdf:about="http://www.swows.org/2013/07/xml-dom#Attr"/>
+    
+
+
+    <!-- http://www.swows.org/2013/07/xml-dom#CDATASection -->
+
+    <owl:NamedIndividual rdf:about="http://www.swows.org/2013/07/xml-dom#CDATASection">
+        <nodeName>#cdata-section</nodeName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.swows.org/2013/07/xml-dom#Comment -->
+
+    <owl:NamedIndividual rdf:about="http://www.swows.org/2013/07/xml-dom#Comment">
+        <nodeName>#comment</nodeName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.swows.org/2013/07/xml-dom#Descending -->
+
+    <owl:NamedIndividual rdf:about="http://www.swows.org/2013/07/xml-dom#Descending">
+        <rdf:type rdf:resource="http://www.swows.org/2013/07/xml-dom#OrderType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.swows.org/2013/07/xml-dom#Document -->
+
+    <owl:NamedIndividual rdf:about="http://www.swows.org/2013/07/xml-dom#Document">
+        <nodeName>#document</nodeName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.swows.org/2013/07/xml-dom#DocumentFragment -->
+
+    <owl:NamedIndividual rdf:about="http://www.swows.org/2013/07/xml-dom#DocumentFragment">
+        <nodeName>#document-fragment</nodeName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.swows.org/2013/07/xml-dom#DocumentType -->
+
+    <owl:NamedIndividual rdf:about="http://www.swows.org/2013/07/xml-dom#DocumentType"/>
+    
+
+
+    <!-- http://www.swows.org/2013/07/xml-dom#Element -->
+
+    <owl:NamedIndividual rdf:about="http://www.swows.org/2013/07/xml-dom#Element"/>
+    
+
+
+    <!-- http://www.swows.org/2013/07/xml-dom#Entity -->
+
+    <owl:NamedIndividual rdf:about="http://www.swows.org/2013/07/xml-dom#Entity"/>
+    
+
+
+    <!-- http://www.swows.org/2013/07/xml-dom#EntityReference -->
+
+    <owl:NamedIndividual rdf:about="http://www.swows.org/2013/07/xml-dom#EntityReference"/>
+    
+
+
+    <!-- http://www.swows.org/2013/07/xml-dom#Node -->
+
+    <owl:NamedIndividual rdf:about="http://www.swows.org/2013/07/xml-dom#Node"/>
+    
+
+
+    <!-- http://www.swows.org/2013/07/xml-dom#Notation -->
+
+    <owl:NamedIndividual rdf:about="http://www.swows.org/2013/07/xml-dom#Notation"/>
+    
+
+
+    <!-- http://www.swows.org/2013/07/xml-dom#ProcessingInstruction -->
+
+    <owl:NamedIndividual rdf:about="http://www.swows.org/2013/07/xml-dom#ProcessingInstruction"/>
+    
+
+
+    <!-- http://www.swows.org/2013/07/xml-dom#Text -->
+
+    <owl:NamedIndividual rdf:about="http://www.swows.org/2013/07/xml-dom#Text">
+        <nodeName>#text</nodeName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.swows.org/2013/07/xml-dom#Attr"/>
+            <rdf:Description rdf:about="http://www.swows.org/2013/07/xml-dom#CDATASection"/>
+            <rdf:Description rdf:about="http://www.swows.org/2013/07/xml-dom#Comment"/>
+            <rdf:Description rdf:about="http://www.swows.org/2013/07/xml-dom#Document"/>
+            <rdf:Description rdf:about="http://www.swows.org/2013/07/xml-dom#DocumentFragment"/>
+            <rdf:Description rdf:about="http://www.swows.org/2013/07/xml-dom#DocumentType"/>
+            <rdf:Description rdf:about="http://www.swows.org/2013/07/xml-dom#Element"/>
+            <rdf:Description rdf:about="http://www.swows.org/2013/07/xml-dom#Entity"/>
+            <rdf:Description rdf:about="http://www.swows.org/2013/07/xml-dom#EntityReference"/>
+            <rdf:Description rdf:about="http://www.swows.org/2013/07/xml-dom#Notation"/>
+            <rdf:Description rdf:about="http://www.swows.org/2013/07/xml-dom#ProcessingInstruction"/>
+            <rdf:Description rdf:about="http://www.swows.org/2013/07/xml-dom#Text"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.swows.org/2013/07/xml-dom#Ascending"/>
+            <rdf:Description rdf:about="http://www.swows.org/2013/07/xml-dom#Descending"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.5.0) http://owlapi.sourceforge.net -->
+
